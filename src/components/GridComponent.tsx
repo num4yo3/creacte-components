@@ -15,7 +15,7 @@ const Root = styled.div.attrs<Style>((props) => ({
   display: flex;
   flex-direction: row; /* row, row-reverse, column, column-reverse */
   flex-wrap: nowrap; /* nowrap, wrap, wrap-reverse */
-  justify-content: center; /* flex-start, flex-end, center, space-between, space-arround */
+  justify-content: space-between; /* flex-start, flex-end, center, space-between, space-arround */
   align-items: center; /* stretch, flex-start, flex-end, center, baseline */
   align-content: center; /* stretch, flex-start, flex-end, center, space-between, space-arround */
   width: 100%;

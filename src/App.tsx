@@ -1,8 +1,8 @@
 import "./styles.css";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { GridComponent, GridItem } from "./components/GridComponent";
-import { ScrollFadeIn } from "./components/ScrollFadeIn";
 import Image01 from "../public/fd401339.jpg";
+import { Card } from "./components/card";
 
 const config = {
   "fast-preview": {
@@ -27,17 +27,23 @@ export default function App() {
       <MathJaxContext version={2} config={config}>
         <h1>Hello CodeSandbox</h1>
         <h2>Start editing to see some magic happen!</h2>
-
-        <GridComponent ratio={[40, 40, 20]} height={300} guid={false}>
+        <GridComponent ratio={[40, 30, 20]} height={300} guid={false}>
           <GridItem n={1}>
-            <MathJax style={{ fontSize: "20px" }}>
-              {`$\\int_0^2 x^4 dx$`}
-            </MathJax>
+            <MathJax style={{ fontSize: "12px" }}>{`$$x^2+3x-4=0$$`}</MathJax>
+            <MathJax style={{ fontSize: "12px" }}>{`$$(x+4)(x-1)=0$$`}</MathJax>
+            <MathJax style={{ fontSize: "12px" }}>{`$$x=1,-4$$`}</MathJax>
           </GridItem>
           <GridItem n={2}>
-            <div>orange</div>
+            <Card>
+              <h2>2次方程式の解き方</h2>
+              <p>因数分解すること</p>
+            </Card>
           </GridItem>
-          <GridItem n={3}>Grape</GridItem>
+          <GridItem n={3}>
+            <Card>
+              <p>AAA</p>
+            </Card>
+          </GridItem>
         </GridComponent>
 
         <GridComponent ratio={[40, 60]} height={300} guid={false}>
@@ -48,12 +54,12 @@ export default function App() {
               <img src={Image01} alt="" style={{ width: "100%" }} />
             </div>
           </GridItem>
-          <GridItem n={2}></GridItem>
+          <GridItem n={2}>
+            <h2>Happy New Year! </h2>
+            <p>あけましておめでとう</p>
+            <p>今年もよろしく</p>
+          </GridItem>
         </GridComponent>
-        <ScrollFadeIn offset={{ x: 0, y: 100 }} adjust={-150}>
-          <h2>ScrollFadeIn</h2>
-          <p>スクロールすると要素が下からフェードインするよ</p>
-        </ScrollFadeIn>
 
         <GridComponent ratio={[60, 40]} height={300} guid={false}>
           <GridItem n={1}></GridItem>
