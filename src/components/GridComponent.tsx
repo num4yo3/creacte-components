@@ -19,27 +19,27 @@ const Root = styled.div`
   ${(props) => props.guid && "outline: dotted 4px silver;"}
 
   .item-01 {
-    flex-grow: ${(props) => props.ratio[0]};
+    flex: 0 0 ${(props) => props.ratio[0] + "%"};
     height: 100%;
     ${(props) => props.guid && "outline: solid 1px skyblue;"}
   }
   .item-02 {
-    flex-grow: ${(props) => props.ratio[1]};
+    flex: 0 0 ${(props) => props.ratio[1] + "%"};
     height: 100%;
     ${(props) => props.guid && "outline: solid 1px skyblue;"}
   }
   .item-03 {
-    flex-grow: ${(props) => props.ratio[2]};
+    flex: 0 0 ${(props) => props.ratio[2] + "%"};
     height: 100%;
     ${(props) => props.guid && "outline: solid 1px skyblue;"}
   }
   .item-04 {
-    flex-grow: ${(props) => props.ratio[3]};
+    flex-grow: ${(props) => props.ratio[3] + "%"};
     height: 100%;
     ${(props) => props.guid && "outline: solid 1px skyblue;"}
   }
   .item-05 {
-    flex-grow: ${(props) => props.ratio[4]};
+    flex-grow: ${(props) => props.ratio[4] + "%"};
     height: 100%;
     ${(props) => props.guid && "outline: solid 1px skyblue;"}
   }
