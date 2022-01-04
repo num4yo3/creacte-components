@@ -7,7 +7,11 @@ type Style = {
   guid?: boolean;
 };
 
-const Root = styled.div`
+const Root = styled.div.attrs<Style>((props) => ({
+  ratio: props.ratio,
+  height: props.height || "100%",
+  guid: props.guid
+}))<Style>`
   display: flex;
   flex-direction: row; /* row, row-reverse, column, column-reverse */
   flex-wrap: nowrap; /* nowrap, wrap, wrap-reverse */

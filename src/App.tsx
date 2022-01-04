@@ -50,14 +50,13 @@ export default function App() {
           </GridItem>
           <GridItem n={2}></GridItem>
         </GridComponent>
+        <ScrollFadeIn offset={{ x: 0, y: 100 }} adjust={-150}>
+          <h2>ScrollFadeIn</h2>
+          <p>スクロールすると要素が下からフェードインするよ</p>
+        </ScrollFadeIn>
 
         <GridComponent ratio={[60, 40]} height={300} guid={false}>
-          <GridItem n={1}>
-            <ScrollFadeIn offset={{ x: 0, y: 100 }} adjust={-150}>
-              <h2>ScrollFadeIn</h2>
-              <p>スクロールすると要素が下からフェードインするよ</p>
-            </ScrollFadeIn>
-          </GridItem>
+          <GridItem n={1}></GridItem>
           <GridItem n={2}>
             <div style={{ width: "100%", height: "100%", overflow: "hidden" }}>
               <img src={Image01} alt="" style={{ width: "100%" }} />
