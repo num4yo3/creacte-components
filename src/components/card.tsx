@@ -1,27 +1,57 @@
 import styled from "styled-components";
+type PCard = {
+  maxWidth: number;
+  color: string;
+  direction?: string;
+};
 
-const Root = styled.div.attrs((props) => ({
-  color: props.color
-}))`
+type PCardImage = {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+};
+
+const Root = styled.div.attrs<PCard>((props) => ({
+  maxWidth: props.maxWidth,
+  color: props.color,
+  direction: props.direction || "column"
+}))<PCard>`
+  display: flex;
+  flex-direction: ${(props) =>
+    props.direction}; /* row, row-reverse, column, column-reverse */
   position: relative;
-  margin: auto;
-  width: 100%;
-  height: 100%;
-  border-radius: 6px;
-  box-shadow: 1px 1px 4px;
+  margin: 0;
+  max-width: ${(props) => props.maxWidth + "px"};
+  /* border: solid 1px; */
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px;
   background-color: ${(props) => props.color};
-
-  /* div {
-    position: absolute;
-    top: 0;
-    left: 0;
-  } */
+  overflow: hidden;
 `;
 
-export const Card: React.FC<Props> = (props) => {
+export const Card: React.FC<PCard> = (props) => {
   return (
-    <Root color="silver">
-      <div>{props.children}</div>
+    <Root
+      maxWidth={props.maxWidth}
+      color={props.color}
+      direction={props.direction}
+    >
+      {props.children}
     </Root>
+  );
+};
+
+export const CardImage: React.FC<PCardImage> = (props) => {
+  const { src, alt, width, height } = props;
+  const compStyle = {
+    width,
+    height,
+    overflow: "hidden"
+  };
+  return (
+    <div style={compStyle}>
+      <img src={src} alt={alt} />
+    </div>
   );
 };
