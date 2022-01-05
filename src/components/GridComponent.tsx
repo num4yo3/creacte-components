@@ -21,9 +21,9 @@ const Wrap = styled.div.attrs<SWrap>((props) => ({
   flex-direction: ${(props) =>
     props.direction}; /* row, row-reverse, column, column-reverse */
   flex-wrap: wrap; /* nowrap, wrap, wrap-reverse */
-  justify-content: space-between; /* flex-start, flex-end, center, space-between, space-arround */
+  justify-content: space-around; /* flex-start, flex-end, center, space-between, space-around */
   align-items: center; /* stretch, flex-start, flex-end, center, baseline */
-  align-content: flex-start; /* stretch, flex-start, flex-end, center, space-between, space-arround */
+  align-content: flex-start; /* stretch, flex-start, flex-end, center, space-between, space-around */
   width: 100%;
   height: ${(props) => props.height + "px"};
   ${(props) => props.guid && "outline: dotted 4px silver;"}
@@ -33,7 +33,7 @@ const Item = styled.div.attrs<SItem>((props) => ({
   width: props.width,
   guid: props.guid
 }))<SItem>`
-  width: ${(props) => props.width + "%"};
+  flex: 1 1 ${(props) => props.width + "0px"};
   ${(props) => props.guid && "outline: dotted 2px black;"}
 `;
 

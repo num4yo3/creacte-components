@@ -7,31 +7,31 @@ type State = {
   innerSize: number;
 };
 type Props = {
-  width: number;
+  width?: number;
   outerSize: number;
   innerSize: number;
   opposite?: boolean;
 };
 
 const Paralax = styled.div.attrs<Props>((props) => ({
-  width: props.width,
+  width: props.width + "px" || "100%",
   ousterSize: props.outerSize,
   innerSize: props.innerSize,
   opposite: props.opposite || false
 }))<Props>`
-  width: ${(props) => props.width + "px"};
+  width: ${(props) => props.width};
   height: ${(props) => props.outerSize + "px"};
   position: relative;
   left: 0px;
   top: 0px;
-  border: solid 1px black;
+  // border: solid 1px black;
   overflow: hidden;
 
   .wrapper {
     position: absolute;
     width: 100%;
     height: ${(props) => props.innerSize + "px"};
-    border: solid 1px grey;
+    // border: solid 1px grey;
     overflow: hidden;
   }
 `;
@@ -87,7 +87,7 @@ const useParalax = (
 };
 
 export const ParalaxBox = (props: {
-  width: number;
+  width?: number;
   outerSize: number;
   innerSize: number;
   opposite?: boolean;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 type PCard = {
-  maxWidth: number;
+  maxWidth?: number;
   color: string;
   direction?: string;
 };
@@ -13,7 +13,7 @@ type PCardImage = {
 };
 
 const Root = styled.div.attrs<PCard>((props) => ({
-  maxWidth: props.maxWidth,
+  maxWidth: props.maxWidth + "px" || "100%",
   color: props.color,
   direction: props.direction || "column"
 }))<PCard>`
@@ -21,8 +21,8 @@ const Root = styled.div.attrs<PCard>((props) => ({
   flex-direction: ${(props) =>
     props.direction}; /* row, row-reverse, column, column-reverse */
   position: relative;
-  margin: 0;
-  max-width: ${(props) => props.maxWidth + "px"};
+  margin: 2px;
+  max-width: ${(props) => props.maxWidth};
   /* border: solid 1px; */
   border-radius: 5px;
   box-shadow: 1px 1px 2px;
