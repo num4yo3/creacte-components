@@ -11,11 +11,11 @@ const Root = styled.div.attrs((props) => ({
   box-shadow: 1px 1px 4px;
   background-color: ${(props) => props.color};
 
-  div {
+  /* div {
     position: absolute;
     top: 0;
     left: 0;
-  }
+  } */
 `;
 
 export const Card: React.FC<Props> = (props) => {
