@@ -7,6 +7,7 @@ import { ParalaxBox } from "./components/Paralax";
 import { ScrollFadeIn } from "./components/ScrollFadeIn";
 import { makeGlobalStyle, GlobalStyleSheet } from "./components/GlobalStyle";
 import { Typgrph } from "./components/Typgrph";
+import { HeaderMenu } from "./components/HeaderMenu";
 
 const config = {
   "fast-preview": {
@@ -29,15 +30,8 @@ export default function App() {
   const theme = makeGlobalStyle({ primary: "red", secondary: "blue" });
   return (
     <GlobalStyleSheet theme={theme}>
-      <div style={{ backgroundColor: "brown" }}>
-        <GridContainer wrap="nowrap">
-          <GridItem xs={4}>Logo</GridItem>
-          <GridItem xs={1}>ABOUT</GridItem>
-          <GridItem xs={1}>PRODUCT</GridItem>
-          <GridItem xs={1}>FRENDS</GridItem>
-        </GridContainer>
-      </div>
       <MathJaxContext version={2} config={config}>
+        <HeaderMenu />
         <Typgrph type="h1">Hello CodeSandbox</Typgrph>
         <Typgrph type="h2">Start editing to see some magic happen!</Typgrph>
         <GridContainer guid>
@@ -72,7 +66,7 @@ export default function App() {
           </GridItem>
           <GridItem xs={10}>
             <Card color="skyblue">
-              <p>AAA</p>
+              <Typgrph type="body">AAA</Typgrph>
             </Card>
           </GridItem>
           <GridItem xs={6}>
@@ -104,8 +98,10 @@ export default function App() {
             <ScrollFadeIn offset={{ x: 0, y: 100 }} adjust={-100}>
               <Card maxWidth={300} color="silver">
                 <CardImage src={Image01} alt="" width={300} height={200} />
-                <h3>Colorful</h3>
-                <p>red, green, yellow and orange can be seen. How about you?</p>
+                <Typgrph type="h3">Colorful</Typgrph>
+                <Typgrph type="body">
+                  red, green, yellow and orange can be seen. How about you?
+                </Typgrph>
               </Card>
             </ScrollFadeIn>
           </GridItem>

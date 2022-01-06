@@ -10,19 +10,17 @@ type ThemeList = {
   secondary: { main: string };
 };
 const Theme = styled.div`
-  h1 {
-    font-size: 32px;
-  }
-  h2 {
-    font-size: 24px;
-  }
-  h3 {
-    font-size: 20px;
-  }
-  p {
-    color: black;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-color: silver;
+
   .card {
+    background-color: #333631;
+    color: #ffffff;
+  }
+  .headermenu {
     background-color: #333631;
     color: #ffffff;
   }

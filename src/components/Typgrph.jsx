@@ -24,6 +24,15 @@ const typographyList = {
   body: {
     fontSize: "1rem",
     margin: "0.5rem 1rem"
+  },
+  smbody: {
+    fontSize: "0.7rem",
+    margin: "0.5rem 1rem"
+  },
+  button: {
+    fontsize: "1.2rem",
+    fontWeight: "bold",
+    margin: "0"
   }
 };
 
