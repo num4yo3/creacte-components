@@ -25,7 +25,7 @@ const Root = styled.div.attrs<PCard>((props) => ({
   max-width: ${(props) => props.maxWidth};
   /* border: solid 1px; */
   border-radius: 5px;
-  box-shadow: 1px 1px 2px;
+  box-shadow: 1px 1px 2px rgb(0, 0, 0);
   background-color: ${(props) => props.color};
   overflow: hidden;
 `;
@@ -33,6 +33,7 @@ const Root = styled.div.attrs<PCard>((props) => ({
 export const Card: React.FC<PCard> = (props) => {
   return (
     <Root
+      className="card"
       maxWidth={props.maxWidth}
       color={props.color}
       direction={props.direction}

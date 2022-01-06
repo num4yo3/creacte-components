@@ -5,6 +5,7 @@ type SContainer = {
   maxWidth?: number;
   height?: number;
   direction?: string;
+  wrap?: string;
   guid?: boolean;
 };
 
@@ -18,15 +19,16 @@ type SItem = {
 };
 
 const Wrap = styled.div.attrs<SContainer>((props) => ({
-  maxWidth: props.maxWidth || "100vw",
+  maxWidth: props.maxWidth || "100%",
   height: props.height || "100%",
   direction: props.direction || "row",
+  wrap: props.wrap || "wrap",
   guid: props.guid
 }))<SContainer>`
   display: flex;
   flex-direction: ${(props) =>
     props.direction}; /* row, row-reverse, column, column-reverse */
-  flex-wrap: wrap; /* nowrap, wrap, wrap-reverse */
+  flex-wrap: ${(props) => props.wrap}; /* nowrap, wrap, wrap-reverse */
   justify-content: space-around; /* flex-start, flex-end, center, space-between, space-around */
   align-items: center; /* stretch, flex-start, flex-end, center, baseline */
   align-content: flex-start; /* stretch, flex-start, flex-end, center, space-between, space-around */
@@ -45,19 +47,26 @@ const Item = styled.div.attrs<SItem>((props) => ({
   guid: props.guid
 }))<SItem>`
   flex: 1 0 ${(props) => props.xs + "0%"};
+
+  ${(props) => props.guid && "outline: dotted 2px black;"}
+
   @media (min-width: 600px) {
     flex: 1 0 ${(props) => props.sm + "0%"};
   }
-  margin: 10px 10px;
-  ${(props) => props.guid && "outline: dotted 2px black;"}
 `;
 
 export const GridContainer: React.FC<Props> = (props) => {
-  const { maxWidth, height, direction } = props;
+  const { maxWidth, height, direction, wrap } = props;
   const guid: boolean = props.guid !== undefined ? true : false;
 
   return (
-    <Wrap maxWidth={maxWidth} height={height} direction={direction} guid={guid}>
+    <Wrap
+      maxWidth={maxWidth}
+      height={height}
+      direction={direction}
+      wrap={wrap}
+      guid={guid}
+    >
       {props.children}
     </Wrap>
   );
