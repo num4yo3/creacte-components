@@ -1,7 +1,8 @@
 import "./styles.css";
 import { MathJax, MathJaxContext } from "better-react-mathjax";
 import { GridContainer, GridItem } from "./components/GridComponent";
-import Image01 from "../public/fd401339.jpg";
+import Image01 from "../public/kenninji01.jpg";
+import Image02 from "../public/fd401339.jpg";
 import { Card, CardImage } from "./components/card";
 import { ParalaxBox } from "./components/Paralax";
 import { ScrollFadeIn } from "./components/ScrollFadeIn";
@@ -32,12 +33,18 @@ export default function App() {
     <GlobalStyleSheet theme={theme}>
       <MathJaxContext version={2} config={config}>
         <HeaderMenu />
-        <Typgrph type="h1">Hello CodeSandbox</Typgrph>
-        <Typgrph type="h2">Start editing to see some magic happen!</Typgrph>
+        <img src={Image01} alt="" style={{ width: "100%" }} />
+        <Typgrph type="h1">束の間の癒しと安らぎの時間</Typgrph>
+        <Typgrph type="body">
+          たまには都会の喧騒から逃れて、閑静でお洒落な空間に身を投げ出したい。
+        </Typgrph>
+        <Typgrph type="body">
+          ここだけは時間が止まっているかの如く、古めかしくもあり懐かしさも匂わせる。
+        </Typgrph>
         <GridContainer guid>
           <GridItem xs={10} sm={6}>
             <div style={{ width: "100%", height: "200px", overflow: "hidden" }}>
-              <img src={Image01} alt="" style={{ width: "100%" }} />
+              <img src={Image02} alt="" style={{ width: "100%" }} />
             </div>
           </GridItem>
           <GridItem xs={10} sm={4}>
@@ -97,7 +104,7 @@ export default function App() {
           <GridItem xs={1}>
             <ScrollFadeIn offset={{ x: 0, y: 100 }} adjust={-100}>
               <Card maxWidth={300} color="silver">
-                <CardImage src={Image01} alt="" width={300} height={200} />
+                <CardImage src={Image02} alt="" width={300} height={200} />
                 <Typgrph type="h3">Colorful</Typgrph>
                 <Typgrph type="body">
                   red, green, yellow and orange can be seen. How about you?

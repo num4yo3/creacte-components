@@ -5,11 +5,14 @@ export const HeaderMenu = () => {
     <div
       className="headermenu"
       style={{
+        position: "fixed",
+        width: "100%",
         display: "flex",
         flexWrap: "nowrap",
         justifyContent: "space-around",
         alignItems: "center",
-        boxShadow: "0px 2px 3px rgb(0,0,0)"
+        boxShadow: "0px 2px 3px rgb(0,0,0)",
+        zIndex: "1"
       }}
     >
       <div>
