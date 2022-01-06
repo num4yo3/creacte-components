@@ -1,22 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 
-type SWrap = {
+type SContainer = {
+  maxWidth?: number;
   height?: number;
   direction?: string;
   guid?: boolean;
 };
 
 type SItem = {
-  width: number;
+  xs: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
   guid?: boolean;
 };
 
-const Wrap = styled.div.attrs<SWrap>((props) => ({
+const Wrap = styled.div.attrs<SContainer>((props) => ({
+  maxWidth: props.maxWidth || "100vw",
   height: props.height || "100%",
   direction: props.direction || "row",
   guid: props.guid
-}))<SWrap>`
+}))<SContainer>`
   display: flex;
   flex-direction: ${(props) =>
     props.direction}; /* row, row-reverse, column, column-reverse */
@@ -24,36 +30,45 @@ const Wrap = styled.div.attrs<SWrap>((props) => ({
   justify-content: space-around; /* flex-start, flex-end, center, space-between, space-around */
   align-items: center; /* stretch, flex-start, flex-end, center, baseline */
   align-content: flex-start; /* stretch, flex-start, flex-end, center, space-between, space-around */
-  width: 100%;
+  width: ${(props) => props.maxWidth};
   height: ${(props) => props.height + "px"};
   ${(props) => props.guid && "outline: dotted 4px silver;"}
+  background-color: "red";
 `;
 
 const Item = styled.div.attrs<SItem>((props) => ({
-  width: props.width,
+  xs: props.xs,
+  sm: props.sm,
+  md: props.md,
+  lg: props.lg,
+  xl: props.xl,
   guid: props.guid
 }))<SItem>`
-  flex: 1 1 ${(props) => props.width + "0px"};
+  flex: 1 0 ${(props) => props.xs + "0%"};
+  @media (min-width: 600px) {
+    flex: 1 0 ${(props) => props.sm + "0%"};
+  }
+  margin: 10px 10px;
   ${(props) => props.guid && "outline: dotted 2px black;"}
 `;
 
-export const Grd: React.FC<Props> = (props) => {
-  const { width, guid, height, direction } = props;
-  const container: boolean = props.container !== undefined ? true : false;
-  const item: boolean = props.item !== undefined ? true : false;
-  if (container) {
-    return (
-      <Wrap height={height} direction={direction} guid={guid}>
-        {props.children}
-      </Wrap>
-    );
-  } else if (item) {
-    return (
-      <Item width={width} guid={guid}>
-        {props.children}
-      </Item>
-    );
-  } else {
-    return null;
-  }
+export const GridContainer: React.FC<Props> = (props) => {
+  const { maxWidth, height, direction } = props;
+  const guid: boolean = props.guid !== undefined ? true : false;
+
+  return (
+    <Wrap maxWidth={maxWidth} height={height} direction={direction} guid={guid}>
+      {props.children}
+    </Wrap>
+  );
+};
+
+export const GridItem: React.FC<Props> = (props) => {
+  const { xs, sm, md, lg, xl } = props;
+  const guid: boolean = props.guid !== undefined ? true : false;
+  return (
+    <Item xs={xs} sm={sm} md={md} lg={lg} xl={xl} guid={guid}>
+      {props.children}
+    </Item>
+  );
 };
