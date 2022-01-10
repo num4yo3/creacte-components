@@ -5,24 +5,37 @@ type SetStyle = {
   primary: string;
   secondary: string;
 };
+
 type ThemeList = {
   primary: { main: string };
   secondary: { main: string };
 };
+
 const Theme = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   margin: 0;
-  background-color: silver;
+  background-color: #a58f86;
 
   .card {
+    background-color: #333631;
+    color: #ffffff;
+  }
+  .paper {
     background-color: #333631;
     color: #ffffff;
   }
   .headermenu {
     background-color: #333631;
     color: #ffffff;
+  }
+  .list {
+    background-color: #333631;
+    color: #ffffff;
+  }
+  .listitem:hover {
+    background-color: #554738;
   }
 `;
 

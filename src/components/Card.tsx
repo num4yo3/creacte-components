@@ -25,7 +25,7 @@ const Root = styled.div.attrs<PCard>((props) => ({
   max-width: ${(props) => props.maxWidth};
   /* border: solid 1px; */
   border-radius: 5px;
-  box-shadow: 1px 1px 2px rgb(0, 0, 0);
+  box-shadow: 1px 1px 2px rgb(0, 0, 0, 1);
   background-color: ${(props) => props.color};
   overflow: hidden;
 `;

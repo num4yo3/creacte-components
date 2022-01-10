@@ -1,4 +1,5 @@
-import { Typgrph } from "./Typgrph";
+import { Typgrph } from "./Typgrph.jsx";
+import { Button01 } from "./Button";
 
 export const HeaderMenu = () => {
   return (
@@ -19,10 +20,10 @@ export const HeaderMenu = () => {
         <Typgrph type="smbody">命蓮寺カフェ-テラス</Typgrph>
         <Typgrph type="h2">鵺之住処</Typgrph>
       </div>
-      <Typgrph type="button">About</Typgrph>
-      <Typgrph type="button">Menu</Typgrph>
-      <Typgrph type="button">Garalley</Typgrph>
-      <Typgrph type="button">Event</Typgrph>
+      <Button01>ABOUT</Button01>
+      <Button01>MENU</Button01>
+      <Button01>GARALLY</Button01>
+      <Button01>EVENT</Button01>
     </div>
   );
 };
