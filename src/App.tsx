@@ -41,16 +41,12 @@ export default function App() {
         <GridContainer alignItems={"start"}>
           <GridItem xs={10}>
             <Divider width="100%" position="left" />
-            <Typgrph type="h1">束の間の癒しと安らぎの時間</Typgrph>
+            <Typgrph type="h1">Section 1</Typgrph>
             <Divider width="80%" position="left" />
-            <Typgrph type="body">たまには都会の喧騒から逃れて、</Typgrph>
-            <Typgrph type="body">
-              閑静でお洒落な空間に身を投げ出したい。
-            </Typgrph>
-            <Typgrph type="body">
-              ここだけは時間が止まっているかの如く、
-            </Typgrph>
-            <Typgrph type="body">古めかしくもあり懐かしさも匂わせる。</Typgrph>
+            <Typgrph type="body">body</Typgrph>
+            <Typgrph type="body">body</Typgrph>
+            <Typgrph type="body">body</Typgrph>
+            <Typgrph type="body">body</Typgrph>
           </GridItem>
           <GridItem xs={10} sm={4}>
             <ParalaxBox outerSize={300} innerSize={350} opposite={false}>
@@ -58,12 +54,12 @@ export default function App() {
             </ParalaxBox>
           </GridItem>
           <GridItem xs={10} sm={4}>
-            <Typgrph type="h2">これは、りんご</Typgrph>
+            <Typgrph type="h2">Paralax Image</Typgrph>
             <Divider width="80%" position="left" />
             <Typgrph type="body">
-              そうこれは、りんご。まごうことなき、りんご。人はこれを「りんご」という。
+              The left figure shows a demonstration of paralax effect.
             </Typgrph>
-            <Button01>詳しく見る≫</Button01>
+            <Button01>Button</Button01>
           </GridItem>
 
           <GridItem xs={8}>
@@ -85,8 +81,8 @@ export default function App() {
 
           <GridItem xs={10}>
             <Paper>
-              <Typgrph type="h3">2次方程式の解き方</Typgrph>
-              <Typgrph type="body">因数分解すること</Typgrph>
+              <Typgrph type="h3">Paper</Typgrph>
+              <Typgrph type="body">paper style</Typgrph>
             </Paper>
           </GridItem>
           <GridItem xs={10}>

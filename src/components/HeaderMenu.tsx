@@ -17,8 +17,12 @@ export const HeaderMenu = () => {
       }}
     >
       <div>
-        <Typgrph type="smbody">命蓮寺カフェ-テラス</Typgrph>
-        <Typgrph type="h2">鵺之住処</Typgrph>
+        <Typgrph type="smbody" margin="0">
+          sub title
+        </Typgrph>
+        <Typgrph type="h2" margin="0">
+          LOGO
+        </Typgrph>
       </div>
       <Button01>ABOUT</Button01>
       <Button01>MENU</Button01>
